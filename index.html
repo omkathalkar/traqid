@@ -3,135 +3,471 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  
   <!-- Primary Meta Tags -->
-  <meta name="title" content="TRAQID – Traffic-Related Air Quality Image Dataset">
-  <meta name="description" content="TRAQID is a large-scale multi-view traffic image dataset with co-located PM2.5, PM10, AQI, and weather data, captured across seasons and day-night conditions for vision-based air quality estimation.">
-  <meta name="keywords" content="Air Quality, AQI, Traffic Images, Computer Vision, PM2.5, PM10, Dataset, Smart Cities">
+  <meta name="title" content="TRAQID - Traffic-Related Air Quality Image Dataset">
+  <meta name="description" content="A novel dataset capturing 26,678 front and rear images of traffic alongside co-located air quality measurements, weather parameters, and AQI values across multiple seasons in Indian cities.">
+  <meta name="keywords" content="TRAQID, air quality dataset, traffic images, AQI estimation, PM2.5, PM10, environmental monitoring, computer vision, deep learning, Indian cities, Hyderabad">
   <meta name="author" content="Om Rajendra Kathalkar, Nitin Nilesh, Sachin Chaudhari, Anoop Namboodiri">
   <meta name="robots" content="index, follow">
-
-  <!-- Open Graph -->
+  <meta name="language" content="English">
+  
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
-  <meta property="og:site_name" content="IIIT Hyderabad – CVIT">
-  <meta property="og:title" content="TRAQID – Traffic-Related Air Quality Image Dataset">
-  <meta property="og:description" content="A large-scale dataset enabling vision-based air quality estimation using traffic images and co-located sensor data.">
-  <meta property="og:url" content="https://omkathalkar.github.io/TRAQID">
-  <meta property="og:image" content="static/images/icvgip2024-10-fig1.jpg">
+  <meta property="og:site_name" content="IIIT Hyderabad - SPCRC & CVIT">
+  <meta property="og:title" content="TRAQID - Traffic-Related Air Quality Image Dataset">
+  <meta property="og:description" content="A novel dataset of 26,678 front-rear traffic image pairs with synchronized air quality measurements spanning multiple seasons and day-night conditions.">
+  <meta property="og:url" content="https://YOUR_DOMAIN_HERE/traqid">
+  <meta property="og:image" content="https://YOUR_DOMAIN_HERE/static/images/social_preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="TRAQID - Traffic-Related Air Quality Image Dataset">
+  <meta property="article:published_time" content="2024-12-13T00:00:00.000Z">
+  <meta property="article:author" content="Om Rajendra Kathalkar">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="air quality dataset">
+  <meta property="article:tag" content="traffic monitoring">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="TRAQID Dataset">
-  <meta name="twitter:description" content="Traffic-related air quality estimation using large-scale image data.">
-  <meta name="twitter:image" content="static/images/icvgip2024-10-fig1.jpg">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:creator" content="">
+  <meta name="twitter:title" content="TRAQID - Traffic-Related Air Quality Image Dataset">
+  <meta name="twitter:description" content="Novel dataset of 26,678 traffic image pairs with synchronized air quality measurements for AQI estimation research.">
+  <meta name="twitter:image" content="https://YOUR_DOMAIN_HERE/static/images/social_preview.png">
+  <meta name="twitter:image:alt" content="TRAQID Dataset Preview">
 
-  <!-- Citation -->
+  <!-- Academic/Research Specific -->
   <meta name="citation_title" content="TRAQID - Traffic-Related Air Quality Image Dataset">
   <meta name="citation_author" content="Kathalkar, Om Rajendra">
   <meta name="citation_author" content="Nilesh, Nitin">
   <meta name="citation_author" content="Chaudhari, Sachin">
   <meta name="citation_author" content="Namboodiri, Anoop">
-  <meta name="citation_conference_title" content="ICVGIP 2024">
+  <meta name="citation_publication_date" content="2024">
+  <meta name="citation_conference_title" content="Indian Conference on Computer Vision, Graphics and Image Processing (ICVGIP 2024)">
   <meta name="citation_pdf_url" content="https://dl.acm.org/doi/10.1145/3702250.3702260">
+  
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
-  <title>TRAQID | ICVGIP 2024</title>
-
+  <title>TRAQID - Traffic-Related Air Quality Image Dataset</title>
+  
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+  
+  <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
-  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-
+  
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+  
+  <!-- Structured Data for Academic Papers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "TRAQID - Traffic-Related Air Quality Image Dataset",
+    "description": "A novel dataset capturing 26,678 front and rear images of traffic alongside co-located air quality parameters (PM2.5, PM10, AQI), weather data, spanning multiple seasons with day and night imagery across Hyderabad and Secunderabad, India.",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "Om Rajendra Kathalkar",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "IIIT Hyderabad"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Nitin Nilesh",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "IIIT Hyderabad"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Sachin Chaudhari",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "IIIT Hyderabad"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Anoop Namboodiri",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "IIIT Hyderabad"
+        }
+      }
+    ],
+    "datePublished": "2024-12-13",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ACM / ICVGIP 2024"
+    },
+    "url": "https://YOUR_DOMAIN_HERE/traqid",
+    "image": "https://YOUR_DOMAIN_HERE/static/images/social_preview.png",
+    "keywords": ["TRAQID", "air quality dataset", "traffic images", "PM2.5", "PM10", "AQI estimation", "environmental monitoring", "computer vision"],
+    "abstract": "Air quality estimation through sensor-based methods is widely used. Nevertheless, their frequent failures and maintenance challenges constrain the scalability of air pollution monitoring efforts. Recently, it has been demonstrated that air quality estimation can be done using image-based methods. These methods offer several advantages including ease of use, scalability, and low cost. However, the accuracy of these methods hinges significantly on the diversity and magnitude of the dataset utilized. Addressing this gap, we present TRAQID - Traffic-Related Air Quality Image Dataset, a novel dataset capturing 26,678 front and rear images of traffic alongside co-located weather parameters, multiple levels of Particulate Matters (PM) and Air Quality Index (AQI) values. Spanning over multiple seasons, with over 70 hours of data collection in the twin cities of Hyderabad and Secunderabad, India, the TRAQID offers diverse day and night imagery amid unstructured traffic conditions, encompassing six AQI categories ranging from 'Good' to 'Severe'.",
+    "isAccessibleForFree": true,
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "mainEntity": {
+      "@type": "Dataset",
+      "name": "TRAQID Dataset",
+      "url": "https://india-data.org/dataset-details/4965db32-3676-427f-86f0-c8ed678dad2b"
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "Air quality monitoring"
+      },
+      {
+        "@type": "Thing", 
+        "name": "Computer vision"
+      },
+      {
+        "@type": "Thing",
+        "name": "Environmental datasets"
+      }
+    ]
+  }
+  </script>
+  
+  <!-- Website/Organization Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "IIIT Hyderabad - SPCRC & CVIT",
+    "url": "https://www.iiit.ac.in",
+    "logo": "https://YOUR_DOMAIN_HERE/static/images/favicon.ico",
+    "sameAs": [
+      "https://github.com/omkathalkar"
+    ]
+  }
+  </script>
 </head>
-
 <body>
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container has-text-centered">
-      <h1 class="title is-1">TRAQID</h1>
-      <h2 class="subtitle is-4">
-        Traffic-Related Air Quality Image Dataset
-      </h2>
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
 
-      <div class="is-size-5">
-        Om Rajendra Kathalkar · Nitin Nilesh · Sachin Chaudhari · Anoop Namboodiri
+  <!-- More Works Dropdown -->
+  <div class="more-works-container">
+    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
+      <i class="fas fa-flask"></i>
+      More Works
+      <i class="fas fa-chevron-down dropdown-arrow"></i>
+    </button>
+    <div class="more-works-dropdown" id="moreWorksDropdown">
+      <div class="dropdown-header">
+        <h4>More Works from Our Group</h4>
+        <button class="close-btn" onclick="toggleMoreWorks()">
+          <i class="fas fa-times"></i>
+        </button>
       </div>
-
-      <div class="is-size-6">
-        IIIT Hyderabad · ICVGIP 2024
-      </div>
-
-      <br>
-
-      <div class="buttons is-centered">
-        <a href="https://dl.acm.org/doi/10.1145/3702250.3702260" class="button is-dark">
-          <i class="fas fa-file-pdf"></i>&nbsp; Paper
+      <div class="works-list">
+        <a href="https://omkathalkar.github.io/aqiformer.html" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>AQIFormer: A Transformer-Based Multi-View Architecture for Cross-City Air Quality Classification</h5>
+            <p>Transformer-based multi-view model that fuses front-rear traffic images and meteorological parameters for robust air quality classification and cross-city generalization.</p>
+            <span class="work-venue">ICVGIP 2025</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
         </a>
-        <a href="https://india-data.org/dataset-details/4965db32-3676-427f-86f0-c8ed678dad2b" class="button is-dark">
-          <i class="fas fa-database"></i>&nbsp; Dataset
+
+        <a href="https://ieeexplore.ieee.org/document/9771526" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>IoT-based AQI Estimation using Image Processing and Learning Methods</h5>
+            <p>Combines low-cost sensors and traffic images for smart air quality monitoring.</p>
+            <span class="work-venue">WF-IoT 2022</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
         </a>
-        <a href="https://github.com/omkathalkar/TRAQID-Traffic-Related-Air-Quality-Image-Dataset" class="button is-dark">
-          <i class="fab fa-github"></i>&nbsp; Code
-        </a>
-        <a href="https://docs.google.com/presentation/d/1tt2Ssz_DXKnbBAy3NtKf4p1CpG4xGKjAXJQqDhz-pYg" class="button is-dark">
-          <i class="fas fa-image"></i>&nbsp; Poster
+
+        <a href="https://www.frontiersin.org/articles/10.3389/fiot.2023.1332322" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Densely Deployed Low-Cost PM Monitoring Networks</h5>
+            <p>End-to-end design of dense low-cost particulate matter monitoring for Indian cities.</p>
+            <span class="work-venue">Frontiers in Internet of Things 2024</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
         </a>
       </div>
     </div>
   </div>
-</section>
 
-<!-- Abstract -->
-<section class="section is-light">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Abstract</h2>
-    <p class="content has-text-justified">
-      TRAQID is a large-scale traffic-centric air quality image dataset containing 26,678 front and rear images paired with co-located PM2.5, PM10, AQI, temperature, and humidity measurements. Collected over 70+ hours across multiple seasons and day-night conditions in Hyderabad and Secunderabad, TRAQID captures real-world unstructured traffic scenarios. The dataset addresses the lack of diversity in existing image-based AQI datasets and serves as a benchmark for vision-based air quality estimation and multimodal learning.
-    </p>
-  </div>
-</section>
+  <main id="main-content">
+    <!-- Hero / Title -->
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">
+                TRAQID: Traffic-Related Air Quality Image Dataset
+              </h1>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  <a href="https://omkathalkar.github.io/" target="_blank">Om Rajendra Kathalkar</a>,
+                </span>
+                <span class="author-block">
+                  <a href="https://nitinnilesh.github.io/" target="_blank">Nitin Nilesh</a>,
+                </span>
+                <span class="author-block">
+                  <a href="https://faculty.iiit.ac.in/~sachin.c/" target="_blank">Sachin Chaudhari</a>,
+                </span>
+                <span class="author-block">
+                  <a href="https://faculty.iiit.ac.in/~anoop/" target="_blank">Anoop Namboodiri</a>
+                </span>
+              </div>
 
-<!-- Figures -->
-<section class="section">
-  <div class="container">
-    <h2 class="title is-3 has-text-centered">Dataset Overview</h2>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  Signal Processing and Communication Research Center (SPCRC) &amp; CVIT<br>
+                  International Institute of Information Technology, Hyderabad<br>
+                  Indian Conference on Computer Vision, Graphics and Image Processing (ICVGIP) 2024
+                </span>
+              </div>
 
-    <img src="static/images/capture_pipeline.png" alt="Capture Pipeline">
-    <p class="has-text-centered">Data collection and preprocessing pipeline</p>
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <span class="link-block">
+                    <a href="https://dl.acm.org/doi/10.1145/3702250.3702260" target="_blank"
+                       class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Paper (ACM)</span>
+                    </a>
+                  </span>
 
-    <img src="static/images/icvgip2024-10-fig1.jpg" alt="TRAQID Spectrum">
-    <p class="has-text-centered">Visual spectrum across AQI categories</p>
+                  <span class="link-block">
+                    <a href="https://github.com/omkathalkar/TRAQID-Traffic-Related-Air-Quality-Image-Dataset" target="_blank"
+                       class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
+                  </span>
 
-    <img src="static/images/__compare_novelty.png__" alt="Dataset Comparison">
-    <p class="has-text-centered">Comparison with prior datasets</p>
+                  <span class="link-block">
+                    <a href="https://india-data.org/dataset-details/4965db32-3676-427f-86f0-c8ed678dad2b" target="_blank"
+                       class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-database"></i>
+                      </span>
+                      <span>Dataset</span>
+                    </a>
+                  </span>
 
-    <img src="static/images/gradcam.jpg" alt="GradCAM">
-    <p class="has-text-centered">GradCAM interpretability results</p>
-  </div>
-</section>
+                  <span class="link-block">
+                    <a href="https://docs.google.com/presentation/d/1tt2Ssz_DXKnbBAy3NtKf4p1CpG4xGKjAXJQqDhz-pYg/edit#slide=id.p" target="_blank"
+                       class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-image"></i>
+                      </span>
+                      <span>Poster</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
 
-<!-- BibTeX -->
-<section class="section is-light">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3">BibTeX</h2>
-<pre><code>@article{Kathalkar2024TRAQID,
-  title = {TRAQID - Traffic-Related Air Quality Image Dataset},
-  author = {Kathalkar, Om Rajendra and Nilesh, Nitin and Chaudhari, Sachin and Namboodiri, Anoop},
-  year = {2024},
-  journal = {Indian Conference on Computer Vision Graphics and Image Processing (ICVGIP)},
-  doi = {10.1145/3702250.3702260},
-  dataset = {https://india-data.org/dataset-details/4965db32-3676-427f-86f0-c8ed678dad2b}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Paper abstract -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Air quality estimation through sensor-based methods is widely used. Nevertheless, their frequent failures and maintenance challenges constrain the scalability of air pollution monitoring efforts. Recently, it has been demonstrated that air quality estimation can be done using image-based methods. These methods offer several advantages including ease of use, scalability, and low cost. However, the accuracy of these methods hinges significantly on the diversity and magnitude of the dataset utilized.
+              </p>
+              <p>
+                Addressing this gap, we present <strong>TRAQID</strong> - Traffic-Related Air Quality Image Dataset, a novel dataset capturing 26,678 front and rear images of traffic alongside co-located weather parameters, multiple levels of Particulate Matters (PM) and Air Quality Index (AQI) values. Spanning over multiple seasons, with over 70 hours of data collection in the twin cities of Hyderabad and Secunderabad, India, the TRAQID offers diverse day and night imagery amid unstructured traffic conditions, encompassing six AQI categories ranging from "Good" to "Severe".
+              </p>
+              <p>
+                State-of-the-art air quality estimation techniques, which were trained on smaller and less-diverse datasets, showed poor results on the dataset presented in this paper. TRAQID models various uncertainty types, including seasonal changes, unstructured traffic patterns, and lighting conditions. The information from the two views (front and rear) of the traffic can be combined to improve the estimation performance in such challenging conditions. As such, the TRAQID serves as a benchmark for image-based air quality estimation tasks and AQI prediction, given its diversity and magnitude.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End paper abstract -->
+
+    <!-- Dataset Overview & Figures -->
+    <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <h2 class="title is-3 has-text-centered">Dataset Overview &amp; Collection Pipeline</h2>
+          <div class="content">
+            <figure>
+              <img src="static/images/icvgip2024-10-fig1.jpg" alt="TRAQID dataset overview showing diverse traffic scenes across AQI categories" loading="lazy">
+              <figcaption class="has-text-centered">
+                Visual spectrum of TRAQID, demonstrating front and rear traffic imagery, day and night captures, and AQI diversity across six categories ranging from "Good" to "Severe" in the twin cities of Hyderabad and Secunderabad.
+              </figcaption>
+            </figure>
+            <br>
+            <figure>
+              <img src="static/images/capture_pipeline.png" alt="TRAQID data collection vehicle setup and preprocessing pipeline" loading="lazy">
+              <figcaption class="has-text-centered">
+                Summary of TRAQID dataset creation: (a) data collection vehicle setup with dual cameras and AQ sensors, (b) street view of collection routes, (c) preprocessing steps, and (d) example data sample with features and labels.
+              </figcaption>
+            </figure>
+            <br>
+            <figure>
+              <img src="static/images/__compare_novelty.png__" alt="Comparison of TRAQID with existing air quality datasets" loading="lazy">
+              <figcaption class="has-text-centered">
+                Comparison of TRAQID with previously collected datasets, highlighting unique features including multiple views, night images, co-located data samples, sequential arrangement, weather parameters, season diversity, and dataset mobility.
+              </figcaption>
+            </figure>
+            <br>
+            <figure>
+              <img src="static/images/gradcam.jpg" alt="GradCAM activation maps showing model attention across AQI categories" loading="lazy">
+              <figcaption class="has-text-centered">
+                GradCAM activation map visualization of the AQC-Net model across different AQI categories. The model focuses on vehicles (especially exhaust areas), urban structures (flyovers, buildings), and atmospheric conditions. As AQI deteriorates from "Poor" to "Severe", attention shifts towards broader scene analysis indicating overall atmospheric haze.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Dataset Overview & Figures -->
+
+    <!--BibTex citation -->
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <div class="bibtex-header">
+          <h2 class="title">BibTeX</h2>
+          <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+            <i class="fas fa-copy"></i>
+            <span class="copy-text">Copy</span>
+          </button>
+        </div>
+<pre id="bibtex-code"><code>@article{Kathalkar2024TRAQID,
+  title     = {TRAQID - Traffic-Related Air Quality Image Dataset},
+  author    = {{Om Kathalkar} and Nilesh, Nitin and Chaudhari, Sachin and Namboodiri, Anoop},
+  year      = {2024},
+  month     = {oct},
+  publisher = {Association for Computing Machinery},
+  journal   = {15th Indian Conference on Computer Vision Graphics and Image Processing, Bengaluru, India},
+  doi       = {10.1145/3702250.3702260},
+  url       = {https://dl.acm.org/doi/10.1145/3702250.3702260},
+  dataset   = {https://india-data.org/dataset-details/4965db32-3676-427f-86f0-c8ed678dad2b}
 }</code></pre>
-  </div>
-</section>
+      </div>
+    </section>
+    <!--End BibTex citation -->
 
-<footer class="footer">
-  <div class="content has-text-centered">
-    <p>
-      © 2024 Authors · Built using Academic Project Page Template
-    </p>
-  </div>
-</footer>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the
+              <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>,
+              adapted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are welcome to reuse this code; please link back to the template repository in the footer. <br>
+              This website is licensed under a
+              <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
+                Creative Commons Attribution-ShareAlike 4.0 International License
+              </a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function copyBibTeX() {
+      const bibtex = document.getElementById('bibtex-code').textContent;
+      navigator.clipboard.writeText(bibtex).then(() => {
+        const btn = document.querySelector('.copy-bibtex-btn');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-check"></i><span class="copy-text">Copied!</span>';
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+        }, 2000);
+      });
+    }
+
+    function toggleMoreWorks() {
+      const dropdown = document.getElementById('moreWorksDropdown');
+      dropdown.classList.toggle('show');
+    }
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Show scroll button when scrolling down
+    window.onscroll = function() {
+      const scrollBtn = document.querySelector('.scroll-to-top');
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        scrollBtn.style.display = 'block';
+      } else {
+        scrollBtn.style.display = 'none';
+      }
+    };
+
+    // Close dropdown when clicking outside
+    window.onclick = function(event) {
+      if (!event.target.matches('.more-works-btn') && !event.target.closest('.more-works-btn')) {
+        const dropdown = document.getElementById('moreWorksDropdown');
+        if (dropdown.classList.contains('show')) {
+          dropdown.classList.remove('show');
+        }
+      }
+    };
+  </script>
 
 </body>
 </html>
